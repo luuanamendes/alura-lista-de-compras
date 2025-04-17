@@ -23,11 +23,24 @@ btnAdd.addEventListener("click", (evento) => {
     containerItemLista.appendChild(nomeItem);
 
     itemLista.appendChild(containerItemLista);
+
+    const diaSemana = new Date().toLocaleDateString("pt-BR", {
+        weekday: "long"
+    });
+    const data = new Date().toLocaleDateString("pt-BR");
+    const hora = new Date().toLocaleTimeString("pt-BR", {
+        hour: "numeric",
+        minute: "numeric"
+    });
+    const dataCompleta = `${diaSemana} (${data}) às ${hora}`;
+    const itemData = document.createElement("p");
+    itemData.innerText = dataCompleta;
+    itemData.classList.add("texto-data");
+    itemLista.appendChild(itemData);
+
     listaCompras.appendChild(itemLista);
 
-    const diaSemana = new Date().toLocaleDateString("pt-BR", {weekday: "long"});
-    const data = new Date().toLocaleDateString("pt-BR");
-    const dataCompleta = `${diaSemana} (${data})`;
+
 
 })
 
