@@ -25,6 +25,9 @@ btnAdd.addEventListener("click", (evento) => {
     itemLista.appendChild(containerItemLista);
     listaCompras.appendChild(itemLista);
 
+    const diaSemana = new Date().toLocaleDateString("pt-BR", {weekday: "long"});
+    const data = new Date().toLocaleDateString("pt-BR");
+    const dataCompleta = `${diaSemana} (${data})`;
 
 })
 
